@@ -5,7 +5,7 @@
 - Tên nhóm: `T108`
 - Lớp: `L3B`
 - Repo nhóm: `K5-L3B-DAY13-T108-LaunchEconomics` (xem [SUBMISSION.md](SUBMISSION.md))
-- URL repo, nhánh nộp, commit chốt: `https://github.com/ToanLee5433/K5-L3B-DAY13-T108-LaunchEconomics` · nhánh `main` · commit chốt cập nhật sau phiên duyệt chéo 17:45
+- URL repo, nhánh nộp, commit chốt: `https://github.com/ToanLee5433/K5-L3B-DAY13-T108-LaunchEconomics` · nhánh `main` (commit chốt mới nhất trên GitHub trước deadline)
 
 ## Thành viên
 
@@ -64,9 +64,9 @@ Ví dụ: `report/team/20241234_NguyenVanAn.md`.
 
 - Đẩy các commit `c1aa62f`, `a4e35d3`, `5fb8bfb`, `62f8432` trên nhánh `2A202603927_DamHongThai` hoàn thiện bộ nhãn độc lập đầu tiên 20 ca (`19/20 = 95%` đồng thuận khi ghép với Lê Quý Toàn), quy tắc phân biệt và bảng khắc phục 5 ca (Ca 1, 7, 10, 11, 5) có đủ event, ngưỡng cảnh báo định lượng, tần suất và 1 vai trò phụ trách/ca.
 - Thiết kế trọn vẹn `8` event có `trace_id` (`request_received`, `agent_run_completed`, `recommendation_presented`, `staff_review_decision`, `refund_posted`, `customer_notified`, `request_closed`, `request_reopened`), 2 chỉ số bổ sung và kiểm tra chéo cho 5/5 chỉ số ở E1.
-- Chuẩn bị chấm chéo Gate 2a (`phieu_cham.md`) và kiểm thử chạy `src/lab13.py` trên máy thứ 2 từ nhánh `main`.
+- Tham gia phiên duyệt chéo Gate 2a (các commit `4912eb7`, `802d2c3`, `5b46d5d`) và hoàn thiện phiếu chấm nhóm `HuuDuyenBL` tại `report/team/phieu_cham.md`.
 
 ### Bằng chứng
 
 - Nhánh `2A202603927_DamHongThai` (commit `62f8432`, đã merge vào `main`): `report/team/bang_loi.md`, `report/team/chi_so.md` (phần E1), `report/team/2A202603927_DamHongThai.md`.
-- Phiếu chấm duyệt chéo Gate 2a: `report/team/phieu_cham.md` *(cập nhật ở phiên 17:00–17:45)*.
+- Phiếu chấm duyệt chéo Gate 2a (`HuuDuyenBL`): `report/team/phieu_cham.md`.
