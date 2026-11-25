@@ -1,7 +1,5 @@
 # Phiếu chấm hội đồng Gate 2a
 
-Nhóm số n chấm nhóm số n + 1; nhóm cuối chấm nhóm 1. Chấm theo bằng chứng trong hồ sơ, không theo cách trình bày: một đề xuất No-go có lý do bằng số được điểm cao hơn một đề xuất Go bỏ qua con số bất lợi.
-
 - Nhóm chấm (hội đồng): **T108**
 - Nhóm được chấm: **HuuDuyenBL**
 
@@ -18,4 +16,3 @@ Nhóm số n chấm nhóm số n + 1; nhóm cuối chấm nhóm 1. Chấm theo b
 
 **Một câu hỏi cho đội trình:** Trong `pilot_plan.yaml`, đơn vị phân nhóm và cách bảo đảm đối chứng chạy đồng thời, ngẫu nhiên là gì; luật dừng an toàn áp dụng ngưỡng nào, theo dõi bao lâu và vai trò nào có quyền dừng?
 
-**Câu trả lời của đội trình (ghi lại tại buổi):** Chờ ghi nhận tại phiên trình bày; transcript được cung cấp không có câu trả lời.
