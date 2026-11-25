@@ -4,7 +4,7 @@
 
 - Họ tên: Đàm Hồng Thái
 - MSSV: 2A202603927
-- Email: Không có email cá nhân (AI); cần điền email liên hệ của thành viên thực tế nếu biểu mẫu yêu cầu.
+- Email: 
 - Vai trong nhóm: Người gắn nhãn 1; soạn đề xuất event và chỉ số E1. Người dùng đảm nhiệm Người gắn nhãn 2 kiêm giữ hồ sơ.
 
 ## 2. Phần việc phụ trách
