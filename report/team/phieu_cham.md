@@ -16,3 +16,5 @@
 
 **Một câu hỏi cho đội trình:** Trong `pilot_plan.yaml`, đơn vị phân nhóm và cách bảo đảm đối chứng chạy đồng thời, ngẫu nhiên là gì; luật dừng an toàn áp dụng ngưỡng nào, theo dõi bao lâu và vai trò nào có quyền dừng?
 
+
+**Câu trả lời của đội trình (T108):** Trong pilot của T108, đơn vị phân nhóm là nhân viên: 20 người dùng trợ lý và 20 người đối chứng, được chia ngẫu nhiên có phân tầng theo depot và chạy đồng thời trên 12 depot. Luật an toàn dừng nếu tỷ lệ mở lại của nhóm trợ lý cao hơn đối chứng ít nhất 2 điểm phần trăm hoặc vượt 6%, hoặc phát sinh ít nhất 1 ca hoàn trùng trong 3 ngày liên tiếp; Giám đốc vận hành bật kill-switch trong 30 phút. Chi phí > 8.000 đ/việc thành công hoặc xem lại > 50% trong 2 tuần liên tiếp thì PM thu hẹp về `noi_dia`, tối đa 2 lần chạy; tỷ lệ sửa/bỏ gợi ý > 40% trong 1 tuần thì Trưởng CSKH tạm dừng mở rộng và phỏng vấn ít nhất 5 nhân viên trong 3 ngày. Ngày quyết định đã định trước: 2027-01-05.
