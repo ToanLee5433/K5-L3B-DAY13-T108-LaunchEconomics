@@ -19,10 +19,12 @@
 # Đánh đổi đã chấp nhận (nếu cách chia chưa đạt cả hai điều kiện):
 #   Với tổng 40 nhân viên, không cách chia theo cụm nào đủ mẫu cho MDE +5 điểm (trần 1.000 < 1.251).
 #   Nhóm chấp nhận nâng MDE lên +6 điểm (m >= 299 yêu cầu/nhân viên trong bước 0.50); nếu tác động thật chỉ là +5 điểm thì power giảm còn khoảng 0,64 (ở n = 859).
+#   Thời gian thu thập ở bước 0.50 (20 nhân viên): 1.500/40 ~ 37-38 đơn/người/ngày nên 7 ngày chỉ đạt ~263 < 299; cần ít nhất 8 ngày toàn tải (hoặc ~10 ngày cho riêng phạm vi noi_dia + hang_nang ~31 đơn/người/ngày), CỘNG THÊM 7 ngày chờ cửa sổ bảo hành mo_lai_trong_7_ngay cho đơn cuối rồi mới họp chốt (không họp vào ngày thứ 7).
 #
 # Tỉ lệ mo_lai_trong_7_ngay hiện tại và ngưỡng an toàn đã chọn:
 #   Hiện tại là 4,25% toàn mẫu (51/1.200) và 3,97% trong phạm vi noi_dia + hang_nang (39/982).
-#   Nếu đặt trần tuyệt đối 3% sẽ khiến pilot dừng ngay tuần đầu, nên đặt ngưỡng kép: chênh cao hơn đối chứng >= 2 điểm phần trăm HOẶC vượt trần tuyệt đối 6%.
+#   Nếu đặt trần tuyệt đối 3% sẽ khiến pilot dừng ngay tuần đầu, nên áp dụng ngưỡng kép: ngưỡng cứng (> 6%, hoàn trùng, báo đã hoàn không ghi sổ) bật từ bước 0.10 (4 người), còn ngưỡng lệch >= 2 điểm so với đối chứng chỉ bật từ bước 0.25 (10 người; tránh báo động giả 56/1.000 ở 4 người so với 8/1.000 ở 10 người).
+#   Ngưỡng chi phí 8.000 đ ở stop_rules chỉ tính chi phí biến đổi (token + tool + giờ người ~ 3.414 đ, không cộng 40 triệu đ/tháng cố định kẻo nổ giả ~15.300 đ ở 4 người hay ~8.200 đ ở 10 người).
 
 pilot:
   owner: "Giám đốc vận hành LogiX-VN"
@@ -46,8 +48,8 @@ pilot:
     spillover_risk: "Trung bình (cùng depot có thể trao đổi); kiểm soát bằng cấp quyền theo staff_id cá nhân, tắt copy liên tài khoản và log mọi lượt truy cập kèm trace_id"
     predeclared: "Có: toàn bộ chỉ số chính, MDE 0,06 (đánh đổi power 0,64 ở mức +5 điểm), 3 luật dừng và ngày chốt quyết định 2027-01-05 được khoá trước khi mở pilot"
   stop_rules:
-    - "NẾU tỉ lệ mở lại trong 7 ngày của nhóm trợ lý cao hơn nhóm đối chứng >= 2 điểm phần trăm hoặc vượt 6%, hoặc phát sinh >= 1 ca hoàn trùng sổ cái TRONG 3 ngày liên tiếp THÌ Giám đốc vận hành bật cờ tắt trợ lý trong 30 phút KHÔNG THÌ không được chuyển sang bước rollout tiếp theo"
-    - "NẾU chi phí mỗi việc thành công (đã cộng cố định ở quy mô tương ứng, simulated tham chiếu 4.599 đ) vượt 8.000 đ hoặc tỉ lệ xem lại vẫn > 50% TRONG 2 tuần liên tiếp THÌ PM trợ lý hoàn phí thu hẹp phạm vi về riêng noi_dia và giới hạn tối đa 2 lần chạy THÌ mới xét tiếp KHÔNG THÌ không được mở thêm hàng nặng hoặc tăng tỷ lệ triển khai"
+    - "NẾU ở mọi bước rollout (kể cả bước 0.10 gồm 4 nhân viên) tỉ lệ mở lại trong 7 ngày vượt 6%, hoặc phát sinh >= 1 ca hoàn trùng sổ cái, hoặc có >= 1 ca nhắn khách đã hoàn nhưng sổ cái không ghi; HOẶC từ bước 0.25 (10 nhân viên) trở lên tỉ lệ mở lại 7 ngày của nhóm trợ lý cao hơn đối chứng >= 2 điểm phần trăm TRONG 3 ngày liên tiếp THÌ Giám đốc vận hành bật cờ tắt trợ lý trong 30 phút KHÔNG THÌ không được chuyển sang bước rollout tiếp theo"
+    - "NẾU chi phí biến đổi mỗi việc thành công (chỉ tính token + tool + giờ xem lại và làm lại, chưa cộng 40 triệu đ/tháng cố định; tham chiếu 3.414 đ, simulated) vượt 8.000 đ hoặc tỉ lệ xem lại vẫn > 50% TRONG 2 tuần liên tiếp THÌ PM trợ lý hoàn phí thu hẹp phạm vi về riêng noi_dia và giới hạn tối đa 2 lần chạy KHÔNG THÌ không được mở rộng hang_nang hoặc tăng bước rollout"
     - "NẾU tỉ lệ bỏ qua gợi ý (sửa hoặc bỏ) vượt 40% TRONG 1 tuần (hiện tại đợt chạy thử là 27,12%) THÌ Trưởng nhóm CSKH tạm dừng mở rộng, phỏng vấn tối thiểu 5 nhân viên trong 3 ngày để sửa quy trình gợi ý KHÔNG THÌ không được nâng từ bước 0.25 lên 0.50"
   interim_looks: "chỉ kiểm tra chỉ số an toàn"
   rollback: "Giám đốc vận hành bật cờ tắt tính năng (kill-switch) trợ lý theo từng depot hoặc toàn bộ, có hiệu lực trong 30 phút; toàn bộ yêu cầu chuyển ngay về luồng nhân viên CSKH tự xử lý (baseline 6 phút = 12.000 đ/yêu cầu)"
